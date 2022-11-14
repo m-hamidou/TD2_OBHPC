@@ -24,7 +24,8 @@ cat "/proc/cpuinfo">>"$cpu"
  grep -e "title\|IJK" "fichier/fonction/tmp.dat">"fichier/fonction/ijk.dat"
  grep -e "title\|IKJ" "fichier/fonction/tmp.dat">"fichier/fonction/ikj.dat"
  grep -e "title\|IEX" "fichier/fonction/tmp.dat">"fichier/fonction/iex.dat"
- grep -e "title\|UNROLL" "fichier/fonction/tmp.dat">"fichier/fonction/unroll.dat"
+ grep -e "title\|UNROLL4" "fichier/fonction/tmp.dat">"fichier/fonction/unroll4.dat"
+ grep -e "title\|UNROLL8" "fichier/fonction/tmp.dat">"fichier/fonction/unroll8.dat"
  grep -e "title\|CBLAS" "fichier/fonction/tmp.dat">"fichier/fonction/cblas.dat"
  rm -rf "fichier/fonction/tmp.dat"
 
@@ -46,6 +47,14 @@ cat "/proc/cpuinfo">>"$cpu"
  make CC=clang
  ./dgemm 100 80 >"fichier/compilateur/clang.dat"
 
+#Question 5: histogramme des différentes versions pour clang
+gnuplot -persist "fichier/compilateur/clang.gnuplot"
+
+#Question 5: histogramme des différentes versions pour gcc
+gnuplot -persist "fichier/compilateur/gcc.gnuplot"
+
+#Question 5: histogramme des différentes versions pour gcc
+gnuplot -persist "fichier/compilateur/compilateur.gnuplot"
 
 
 

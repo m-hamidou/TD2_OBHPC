@@ -94,7 +94,7 @@ void dgemm_unroll8(f64 *restrict a, f64 *restrict b, f64 *restrict c, u64 n)
 	    }
 
 	  //Manage the leftovers
-	  for (u64 j = (n - (n & 3)); j < n; j++)
+	  for (u64 j = (n - (n & 7)); j < n; j++)
 	    c[i * n + j]     +=  _a_ * b[k * n + j];
 	}
     }
