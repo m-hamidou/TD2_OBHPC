@@ -5,7 +5,7 @@ set style histogram clustered
 set title "Histogramme des différentes versions pour compilateur clang"
 
 #Titre axe 
-set xlabel "Differentes versions dgemm"
+set xlabel "Differentes versions reduc"
 set ylabel "Mibs/s"
 
 #Plage valeur
@@ -21,4 +21,4 @@ set xtics rotate by -45
 #Sauvegarder
 set terminal jpeg
 set output "clang.jpeg"
-plot "fichier/compilateur/clang.dat"  using 13:xtic(1) linecolor rgb "blue" , "" using 14:xtic(1) linecolor rgb "blue"
+plot "fichier/compilateur/clang.dat"  using 15:xtic(1) linecolor rgb "blue" 

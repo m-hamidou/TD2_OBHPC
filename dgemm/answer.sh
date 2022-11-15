@@ -53,8 +53,11 @@ gnuplot -persist "fichier/compilateur/clang.gnuplot"
 #Question 5: histogramme des différentes versions pour gcc
 gnuplot -persist "fichier/compilateur/gcc.gnuplot"
 
-#Question 5: histogramme des différentes versions pour gcc
+#Question 5: histogramme des différentes version selon les compilateur
 gnuplot -persist "fichier/compilateur/compilateur.gnuplot"
+
+#Question 5: histogramme des différentes version selon les flags
+gnuplot -persist "fichier/flags/flags.gnuplot"
 
 
 

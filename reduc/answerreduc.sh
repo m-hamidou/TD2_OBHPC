@@ -24,3 +24,12 @@
  ./reduc 1024 1000 >"fichier/compilateur/gcc.dat"
  make CC=clang
  ./reduc 1024 1000 >"fichier/compilateur/clang.dat"
+
+ #Question 5: histogramme des différentes versions pour clang
+gnuplot -persist "fichier/compilateur/clang.gnuplot"
+
+#Question 5: histogramme des différentes versions pour gcc
+gnuplot -persist "fichier/compilateur/gcc.gnuplot"
+
+#Question 5: histogramme des différentes versions pour gcc
+gnuplot -persist "fichier/compilateur/compilateur.gnuplot"

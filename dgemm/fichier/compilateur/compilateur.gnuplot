@@ -6,16 +6,17 @@ set title "Histogramme comparant les versions par compilateur"
 
 #Titre axe 
 set xlabel "Differentes versions dgemm"
-set ylabel "mean"
+set ylabel "MiB/s"
 
 #Plage valeur
-set xrange [0:7]
+set xrange [0:8]
 
 #Remplissage histogram
 set style fill solid
+set xtics rotate by -45
 
 
 #Sauvegarder
 set terminal jpeg
 set output "compilateur.jpeg"
-plot "fichier/compilateur/clang.dat" using 9, "fichier/compilateur/gcc.dat" using 9
+plot "fichier/compilateur/clang.dat"  using 13:xtic(1) linecolor rgb "blue" , "fichier/compilateur/clang.dat" using 14:xtic(1) linecolor rgb "blue", "fichier/compilateur/gcc.dat"  using 13:xtic(1) linecolor rgb "red" , "fichier/compilateur/gcc.dat" using 14:xtic(1) linecolor rgb "red"
